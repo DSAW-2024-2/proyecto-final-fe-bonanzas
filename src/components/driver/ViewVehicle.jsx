@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import CustomButton from '../reusable/CustomButton';
 import { useNavigate } from 'react-router-dom';
+import '../reusable/loader.css';
+
 
 const ViewVehicle = () => {
   const [vehicle, setVehicle] = useState(null); // Estado para almacenar la información del vehículo
@@ -41,8 +43,8 @@ const ViewVehicle = () => {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-screen bg-gradient-to-br from-[#1E3A8A] to-[#3B82F6] text-white">
-        <p>Cargando la información del vehículo...</p>
+      <div className="flex justify-center items-center h-screen bg-gradient-to-br from-[#1E3A8A] to-[#3B82F6]">
+        <div className="loader"></div>
       </div>
     );
   }
